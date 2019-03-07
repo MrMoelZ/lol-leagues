@@ -1,9 +1,7 @@
-# [START runtime]
 runtime: nodejs10
 handlers: 
 - url: /static
   static_dir: public
 
-- url: /.js
-  static_dir: ./
-# [END runtime]
+- url: /imgs
+  static_dir: imgs
