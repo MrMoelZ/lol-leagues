@@ -12,7 +12,6 @@
   "dependencies": {
     "express": "^4.16.4",
     "pg": "^7.8.2",
-    "pg-promise": "^8.6.3",
-    "vue": "^2.6.8"
+    "pg-promise": "^8.6.3"
   }
 }
