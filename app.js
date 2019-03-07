@@ -1,5 +1,4 @@
-const pg = require('pg')
-const pgp = require('pgp')
+
 const express = require('express')
 const app = express()
 
