@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <navigation></navigation>
+        <div>
+            <div id="clock">
+                {{moment.date}} - {{moment.time}}
+            </div>
+            <div id="left">
+                <div>
+                    Teams
+                </div>
+                <h2 v-if="current != null">{{current.name}}</h2>
+                <table>
+                    <tr>
+                        <td v-for="column in tableColumnsTeams" @click="sortBy('teams',column.key)">{{column.name}}</td>
+                    </tr>
+                    <tr v-for="(t, ix) in current.participants">
+                        <td>{{ix+1}}</td>
+                        <td><img :src="'./imgs/' + t.logo" class="teamLogo"></td>
+                        <td>{{t.team}}</td>
+                        <td>{{t.stats.current.games}}</td>
+                        <td>{{t.stats.current.wins}}</td>
+                        <td>{{t.stats.current.losses}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="right">
+                Players
+            </div>
+            <h2></h2>
+            <table>
+                    <tr>
+                        <td v-for="column in tableColumnsPlayers" @click="sortBy('players',column.key)">{{column.name}}</td>
+                    </tr>
+                    <tr v-for="(p, ix) in players">
+                        <td>{{ix+1}}</td>
+                        <td>{{p.nick}}</td>
+                        <td>{{p.firstName}} {{p.lastName}}</td>
+                        <td>{{p.team}}</td>
+                        <td>{{p.splitsOnTeam}}</td>
+                        <td><img :src="getFlag(p.nationality)"></td>
+                        <td>{{formatBirthday(p.dob)}} ({{getAge(p.dob)}})</td>
+                        <td>{{p.splitsPro}}</td>
+                    </tr>
+                </table>
+        </div>
+    </div>
+    
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

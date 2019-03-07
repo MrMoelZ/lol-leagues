@@ -1,0 +1,50 @@
+body {
+    background-color: #ddd;
+    font-family: Verdana;
+}
+
+#clock {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 0.8em;
+}
+
+#navigation {
+    background-color: #222;
+    overflow: hidden;
+    margin-bottom: 2%;
+    padding-bottom: 15px;
+}
+
+.navHead {
+    list-style-type: none;
+}
+
+.navPoint {
+    float: left;
+    color: #e57914;
+    width: 150px;
+}
+
+.navPoint:hover {
+    display:block;
+    background-color: #444;
+}
+
+.navSub {
+    background-color: #222;
+    position: absolute;
+    list-style-type: none;
+    
+}
+
+.navSubPoint {
+}
+
+
+.teamLogo {
+    height: 20px;
+    width: 20px;
+}
